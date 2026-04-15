@@ -1,105 +1,177 @@
-/* Remove all class-based selectors since there are no classes in the React component */
-.aboutme-container {
-    max-width: 900px;      /* Increased from 800px */
-    margin: 40px auto;     /* Slightly less space above/below */
-    padding: 48px 40px;    /* More padding for a tighter card */
-    background: #fff;
-    border-radius: 24px;    /* Slightly more rounded */
-    box-shadow: 0 4px 32px rgba(0,0,0,0.08); /* Deeper shadow for emphasis */
-    font-family: 'Segoe UI', Arial, sans-serif;
+.aboutme-spatial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 2% 10px;
 }
 
-.aboutme-title {
-    font-size: 2.6rem;      /* Larger title */
-    font-weight: 700;
-    color: #22223b;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
+.spatial-section-header {
+  margin-bottom: 42px;
 }
 
-.aboutme-description {
-    font-size: 1.15rem;
-    color: #4a4e69;
-    line-height: 1.8;
-    margin-bottom: 28px;
+.spatial-eyebrow {
+  font-family: var(--font-body);
+  color: var(--accent-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-.aboutme-greeting {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #22223b;
+.spatial-section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 6vw, 4.2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
-.aboutme-name {
-    color: #6366f1;
-    font-weight: 700;
+.spatial-about-lead {
+  max-width: 760px;
+  margin: 16px 0 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.72;
 }
 
-.aboutme-highlight {
-    color: #6366f1;
-    font-weight: 600;
+
+.about-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.aboutme-school {
-    color: #3a86ff;
-    font-weight: 500;
+.about-story-card,
+.about-capability-panel,
+.about-principles-panel {
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
+  padding: 24px;
 }
 
-.aboutme-enthusiast {
-    font-style: italic;
-    color: #b5179e;
+.about-story-card h3,
+.about-capability-panel h3,
+.about-principles-panel h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
 }
 
-.aboutme-hobbies {
-    margin-top: 12px;
+.about-story-card p {
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  max-width: 900px;
 }
 
-.aboutme-hobbies ul {
-    margin: 8px 0 0 18px;
-    padding: 0;
-    color: #22223b;
+.about-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.aboutme-hobbies li {
-    margin-bottom: 4px;
-    list-style: disc;
+.about-focus-card {
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  min-height: 180px;
+}
+
+.about-focus-card h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.03rem;
+}
+
+.about-focus-card p {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+.about-focus-card span {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--accent-primary);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.capability-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.capability-column {
+  border-radius: 14px;
+  border: 1px solid rgba(157, 176, 198, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+}
+
+.capability-column h4 {
+  margin: 0;
+  color: var(--accent-secondary);
+  font-size: 0.87rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.capability-column ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.capability-column li {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.about-principles-panel ul {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.about-principles-panel li {
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent-primary);
+  padding-left: 12px;
+  line-height: 1.6;
+  font-size: 0.94rem;
 }
 
 @media (max-width: 900px) {
-    .aboutme-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 24px 8px;
-        box-sizing: border-box;
-    }
-    .aboutme-title {
-        font-size: 2rem;
-    }
+  .about-story-card,
+  .about-capability-panel,
+  .about-principles-panel {
+    padding: 20px;
+  }
+
+  .about-focus-grid,
+  .capability-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .about-focus-card {
+    min-height: auto;
+  }
 }
-
-@media (max-width: 600px) {
-    .aboutme-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 16px 8px;
-        border-radius: 14px;
-        box-sizing: border-box;
-        margin: 16px 0;
-    }
-    .aboutme-title {
-        font-size: 1.5rem;
-        margin-bottom: 14px;
-    }
-    .aboutme-description {
-        font-size: 1rem;
-        margin-bottom: 18px;
-    }
-    .aboutme-greeting {
-        font-size: 1.05rem;
-    }
-    .aboutme-hobbies ul {
-        margin-left: 12px;
-    }
-}
-
-

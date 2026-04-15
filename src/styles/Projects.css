@@ -1,63 +1,166 @@
-.projects-container {
-  max-width: 800px;
-  margin: 30px auto 0 auto;
-  padding: 32px 28px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(34,34,59,0.07);
+.projects-spatial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 30px 2% 10px;
 }
 
-.projects-container h2 {
-  font-size: 2rem;
-  color: #22223b;
-  margin-bottom: 24px;
+.spatial-projects-lead {
+  max-width: 740px;
+  margin: 14px 0 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.spatial-projects-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--surface-border);
+  margin-top: 36px;
+  gap: 16px;
+}
+
+.spatial-project-row {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.spatial-project-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(88, 196, 168, 0.08) 0%, rgba(116, 174, 234, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  border-radius: 18px;
+}
+
+.spatial-project-row:hover::before {
+  opacity: 1;
+}
+
+.spatial-project-row:hover .spatial-project-title {
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.spatial-project-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.spatial-project-index {
+  font-family: var(--font-body);
+  color: var(--accent-secondary);
+  font-size: 0.84rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  padding: 4px 9px;
 }
 
-.projects-container ul {
-  list-style: none;
-  padding: 0;
+.spatial-project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 4.3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.spatial-project-details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 14px;
+  gap: 12px;
+}
+
+.spatial-project-desc {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.6;
   margin: 0;
 }
 
-.projects-container li {
-  margin-bottom: 32px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid #ececec;
+.spatial-project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.projects-container li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
+.spatial-tag-bubble {
+  border: 1px solid var(--surface-border);
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
 }
 
-.projects-container h3 {
-  font-size: 1.2rem;
-  color: #4a4e69;
-  margin-bottom: 8px;
-  font-weight: 600;
+.spatial-project-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(157, 176, 198, 0.24);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
 }
 
-.projects-container p {
-  color: #22223b;
-  margin-bottom: 10px;
-  font-size: 1rem;
+.spatial-project-footer p {
+  margin: 0;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
 }
 
-.projects-container a {
-  display: inline-block;
-  padding: 7px 18px;
-  background: linear-gradient(90deg, #22223b 60%, #4a4e69 100%);
-  color: #fff;
-  border-radius: 5px;
+.spatial-project-link {
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.2s, transform 0.2s;
+  font-size: 0.86rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.projects-container a:hover {
-  background: linear-gradient(90deg, #4a4e69 60%, #22223b 100%);
-  transform: translateY(-2px) scale(1.04);
+.spatial-project-link:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .spatial-project-header {
+    gap: 10px;
+  }
+  
+  .spatial-project-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .spatial-project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

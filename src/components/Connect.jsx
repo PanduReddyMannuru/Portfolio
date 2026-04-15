@@ -1,10 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 import '../styles/Connect.css';
 
 const Connect = () => {
     return (
-        <section id="connect" className="connect-section">
+        <motion.section 
+          className="connect-section"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 100 }}
+        >
             <h2 className="connect-heading">Get in Touch</h2>
             <p className="connect-text">
                 Interested in working together or have any questions? Feel free to reach out!
@@ -27,7 +34,7 @@ const Connect = () => {
             </a>
 
             </div>
-        </section>
+        </motion.section>
     );
 };
 

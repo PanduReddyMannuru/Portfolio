@@ -1,0 +1,263 @@
+.journey-section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.journey-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.section-subtitle {
+  margin: 0;
+  color: var(--accent-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 8px 0 0;
+  color: var(--text-primary);
+  font-size: clamp(1.8rem, 5.5vw, 3rem);
+  font-family: var(--font-heading);
+}
+
+.journey-lead {
+  margin: 12px 0 0;
+  max-width: 700px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.journey-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 0;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(88, 196, 168, 0.95) 0%, rgba(246, 184, 111, 0.75) 50%, rgba(157, 176, 198, 0.22) 100%);
+}
+
+.journey-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 68px minmax(0, 1fr);
+  align-items: center;
+  min-height: 170px;
+}
+
+.entry-left {
+  grid-template-areas: 'card marker note';
+}
+
+.entry-right {
+  grid-template-areas: 'note marker card';
+}
+
+.timeline-marker {
+  grid-area: marker;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(88, 196, 168, 0.5);
+  background: rgba(11, 27, 43, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 6px rgba(11, 27, 43, 0.35);
+}
+
+.timeline-marker span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(130deg, #58c4a8 0%, #f6b86f 100%);
+  box-shadow: 0 0 0 7px rgba(88, 196, 168, 0.14);
+}
+
+.journey-card {
+  grid-area: card;
+  width: 100%;
+  max-width: 460px;
+  justify-self: stretch;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  padding: 20px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(157, 176, 198, 0.28);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 18%, rgba(246, 184, 111, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.journey-card::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: -28px;
+  bottom: -32px;
+  border-radius: 50%;
+  border: 1px solid rgba(157, 176, 198, 0.2);
+  pointer-events: none;
+}
+
+.journey-card:hover {
+  border-color: rgba(88, 196, 168, 0.62);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+  transform: translateY(-4px);
+}
+
+.journey-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.journey-step {
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  border: 1px solid rgba(157, 176, 198, 0.34);
+  border-radius: 999px;
+  padding: 4px 8px;
+  letter-spacing: 0.08em;
+}
+
+.journey-year {
+  color: var(--accent-secondary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+
+.journey-card h3 {
+  font-size: 1.28rem;
+  color: var(--text-primary);
+  margin: 10px 0 0;
+}
+
+.journey-institute {
+  margin: 8px 0 0;
+  color: var(--accent-primary);
+  font-size: 0.86rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  letter-spacing: 0.03em;
+}
+
+.journey-note {
+  grid-area: note;
+  margin: 0;
+  max-width: 360px;
+  justify-self: center;
+  padding: 14px 16px;
+  border: 1px dashed rgba(157, 176, 198, 0.32);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: 0.88rem;
+  position: relative;
+}
+
+.entry-left .journey-note::before,
+.entry-right .journey-note::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  border-top: 1px dashed rgba(157, 176, 198, 0.35);
+}
+
+.entry-left .journey-note::before {
+  left: -16px;
+}
+
+.entry-right .journey-note::before {
+  right: -16px;
+}
+
+@media (max-width: 900px) {
+  .journey-header {
+    margin-bottom: 24px;
+  }
+
+  .journey-timeline::before {
+    left: 12px;
+    transform: none;
+  }
+
+  .journey-entry,
+  .entry-left,
+  .entry-right {
+    min-height: auto;
+    grid-template-columns: 24px minmax(0, 1fr);
+    grid-template-areas:
+      'marker card'
+      'marker note';
+    column-gap: 12px;
+    row-gap: 10px;
+  }
+
+  .timeline-marker {
+    justify-self: center;
+    align-self: start;
+    margin-top: 20px;
+  }
+
+  .journey-card {
+    width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+    max-width: 100%;
+  }
+
+  .timeline-marker span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .journey-note {
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .entry-left .journey-note::before,
+  .entry-right .journey-note::before {
+    display: none;
+  }
+}

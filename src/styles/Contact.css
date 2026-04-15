@@ -1,74 +1,142 @@
-.contact-section {
-  max-width: 700px;
-  margin: 48px auto 0;
-  padding: 32px 16px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(60,60,60,0.08);
-  text-align: center;
-}
-
-.contact-section h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #22223b;
-}
-
-.contact-section p {
-  max-width: 520px;
-  margin: 0 auto 28px;
-  color: #444;
-  font-size: 1.1rem;
-}
-
-.contact-section form {
+.contact-spatial {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 2% 8px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
   align-items: center;
 }
 
-.contact-section input,
-.contact-section textarea {
-  width: 100%;
-  max-width: 600px;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #d4d4d4;
-  background: #f6f6fa;
-  color: #222;
+.contact-spatial-desc {
+  max-width: 640px;
+  text-align: center;
+  color: var(--text-secondary);
   font-size: 1rem;
-  resize: none;
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+.contact-direct-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.contact-direct-links a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.87rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  padding: 9px 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-direct-links a:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-spatial form {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  padding: 22px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
+}
+
+.contact-spatial input,
+.contact-spatial textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--surface-border);
+  background: rgba(9, 18, 30, 0.7);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
-.contact-section textarea {
-  min-height: 120px;
+.contact-spatial textarea {
+  min-height: 150px;
   resize: vertical;
 }
 
-.contact-section button {
-  align-self: flex-start;
-  /* margin-left: 50px; */
-  background: #22223b;      /* Changed to match resume button color */
-  color: #f2e9e4;           /* Changed to match resume button text color */
-  border: none;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1.08rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 8px;
-  transition: background 0.2s;
+.contact-spatial input:focus,
+.contact-spatial textarea:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.contact-section button:hover {
-  background: #4a4e69;      /* Slightly lighter for hover, matching resume button hover */
+.contact-spatial button {
+  width: fit-content;
+  background: var(--gradient-primary);
+  color: #0b1c2c;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.contact-spatial button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px var(--accent-glow);
+}
+
+.thank-you {
+  background: rgba(88, 196, 168, 0.12);
+  border: 1px solid rgba(88, 196, 168, 0.35);
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.thank-you h3 {
+  color: var(--accent-primary);
+  font-size: 1.4rem;
+  margin: 0 0 12px 0;
+}
+
+.thank-you p {
+  color: rgba(88, 196, 168, 0.92);
+  margin: 0;
+}
+
 @media (max-width: 800px) {
-.contact-section button {
-  align-self: flex-start;
-  margin-left: 0;
-    }
+  .contact-spatial {
+    padding: 20px 2%;
+  }
+
+  .contact-direct-links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .contact-spatial form {
+    padding: 16px;
+  }
 }

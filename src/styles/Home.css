@@ -1,101 +1,234 @@
-.home-flex {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.home-container {
-  max-width: 900px;
-  padding: 48px 40px;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-}
-
-.home-content-with-image {
+.home-spatial {
+  min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;
-  gap: 48px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 2%;
+  position: relative;
+  overflow: hidden;
 }
 
 .home-content {
-  flex: 1;
+  flex: 1.05;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  justify-content: center;
+  z-index: 2;
 }
 
-.home-content h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #22223b;
-  margin-bottom: 12px;
+.spatial-eyebrow {
+  font-family: var(--font-body);
+  color: var(--accent-secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
 }
 
-.home-content p {
-  font-size: 1.15rem;
-  color: #22223b;
-  margin-bottom: 18px;
-  line-height: 1.7;
+.hero-intro {
+  margin: 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1.04rem;
 }
 
-.social-links {
+.spatial-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 8.5vw, 6.3rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 8px 0 0;
   display: flex;
-  gap: 18px;
-  margin-bottom: 18px;
+  flex-direction: column;
 }
 
-.social-links a {
-  color: #22223b;
-  font-size: 2rem;
-  transition: color 0.2s;
+.spatial-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(232, 237, 244, 0.55);
+  animation: titleShimmer 4.5s ease-in-out infinite;
 }
 
-.social-links a:hover {
-  color: #4a4e69;
+.hero-summary {
+  max-width: 620px;
+  margin: 24px 0 0;
+  font-size: 1.06rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
 }
 
-.Resume-button {
-  margin-top: 10px;
-  padding: 10px 28px;
-  background: linear-gradient(90deg, #22223b 60%, #4a4e69 100%);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 600;
+.spatial-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.spatial-resume-btn {
+  font-family: var(--font-body);
+  color: #0a1b2b;
+  background: var(--gradient-primary);
+  padding: 13px 22px;
+  border-radius: 999px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.08);
-  transition: background 0.2s, transform 0.2s, color 0.2s;
-  cursor: pointer;
-  display: inline-block;
+  font-weight: 700;
+  font-size: 0.94rem;
+  letter-spacing: 0.03em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Resume-button:hover {
-  background: linear-gradient(90deg, #4a4e69 60%, #22223b 100%);
-  color: #fff;
-  transform: translateY(-2px) scale(1.04);
+.spatial-resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px var(--accent-glow);
 }
 
-.profile-image {
-  width: 160px;
-  height: 160px;
+.spatial-outline-btn {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  border: 1px solid var(--surface-strong);
+  border-radius: 999px;
+  text-decoration: none;
+  padding: 13px 22px;
+  font-size: 0.94rem;
+  letter-spacing: 0.03em;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.spatial-outline-btn:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
+.spatial-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.spatial-socials a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s;
+}
+
+.spatial-socials a:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.hero-metrics {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 14px;
+  max-width: 720px;
+}
+
+.hero-metrics div {
+  border: 1px solid var(--surface-border);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 14px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-metrics div:hover {
+  border-color: rgba(88, 196, 168, 0.45);
+}
+
+.hero-metrics span {
+  display: block;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.hero-metrics p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.spatial-profile {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  height: min(66vh, 520px);
+  width: min(34vw, 430px);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 26px 46px rgba(0, 0, 0, 0.28);
+}
+
+.profile-mesh-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 26%, rgba(116, 174, 234, 0.33) 0%, rgba(0, 0, 0, 0) 62%);
+  z-index: -1;
+}
+
+.spatial-profile img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 2px 12px rgba(34,34,59,0.10);
-  background: #fff;
-  flex-shrink: 0;
+  object-position: top center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%);
+}
+
+@keyframes titleShimmer {
+  0%,
+  100% { -webkit-text-stroke-color: rgba(232, 237, 244, 0.42); }
+  50% { -webkit-text-stroke-color: rgba(246, 184, 111, 0.7); }
 }
 
 @media (max-width: 900px) {
-  .home-content-with-image {
+  .home-spatial {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+    justify-content: flex-start;
+    padding-top: 34px;
+    gap: 26px;
+    text-align: left;
   }
-  .profile-image {
-    margin-left: 0;
-    margin-top: 18px;
+  
+  .spatial-actions {
+    gap: 12px;
+  }
+  
+  .spatial-profile {
+    position: relative;
+    right: 0;
+    width: 100%;
+    max-width: 360px;
+    height: 44vh;
+    margin-top: 8px;
+  }
+  
+  .spatial-title {
+    align-items: flex-start;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .spatial-profile {
+    max-width: 300px;
+    height: 38vh;
   }
 }
